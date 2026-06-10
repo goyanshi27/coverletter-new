@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LetterForge AI — Smart Cover Letter Generator</title>
+  <meta name="description" content="Create professional cover letters instantly with LetterForge AI. Free online cover letter builder with modern templates.">
+  <meta name="keywords" content="cover letter builder, cover letter generator, resume tool, job application letter">
+  <meta name="author" content="Your Name">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <div class="logo-icon"><i class="fas fa-feather-alt"></i></div>
+        <span>Letter<strong>Forge</strong> <em>AI</em></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <a href="#home"         class="nav-item">Home</a>
+        <a href="#how-it-works" class="nav-item">How It Works</a>
+        <a href="#generator"    class="nav-item">Generator</a>
+        <a href="#reviews"      class="nav-item">Reviews</a>
+        <a href="#faq"          class="nav-item">FAQ</a>
+      </nav>
+
+      <div class="nav-controls">
+        <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">
+          <i class="fas fa-moon" id="themeIco"></i>
+        </button>
+        <a href="#generator" class="pill-btn">Try Free <i class="fas fa-arrow-right"></i></a>
+        <button id="menuBtn" class="icon-btn hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-wrap">
+      <div class="hero-left">
+        <div class="hero-chip reveal">
+          <span class="chip-dot"></span> AI-Powered · ATS-Optimized · Free Forever
+        </div>
+        <h1 class="hero-h1 reveal">
+          Create Professional<br />
+          <span class="type-wrap"><span id="typeEl" class="typed"></span><span class="cursor">|</span></span>
+        </h1>
+        <p class="hero-sub reveal">
+          Stop staring at a blank page. LetterForge AI crafts personalized, keyword-rich cover letters that beat ATS filters and impress hiring managers — in under 60 seconds.
+        </p>
+        <div class="hero-btns reveal">
+          <a href="#generator" class="btn-main">
+            <i class="fas fa-bolt"></i> Generate My Letter
+          </a>
+          <a href="#how-it-works" class="btn-ghost">
+            <i class="fas fa-play"></i> See How It Works
+          </a>
+        </div>
+        <div class="hero-trust reveal">
+          <div class="trust-item"><i class="fas fa-users"></i> <span>80,000+ letters created</span></div>
+          <div class="trust-sep"></div>
+          <div class="trust-item"><i class="fas fa-shield-alt"></i> <span>100% private & free</span></div>
+          <div class="trust-sep"></div>
+          <div class="trust-item"><i class="fas fa-star"></i> <span>4.9 / 5 rating</span></div>
+        </div>
+      </div>
+
+      <div class="hero-right reveal">
+        <div class="doc-card">
+          <div class="doc-topbar">
+            <div class="doc-dots"><span></span><span></span><span></span></div>
+            <span class="doc-title"><i class="fas fa-file-alt"></i> cover_letter.pdf</span>
+            <span class="doc-badge"><i class="fas fa-check"></i> ATS Ready</span>
+          </div>
+          <div class="doc-body">
+            <div class="doc-line w75 bold"></div>
+            <div class="doc-line w45 thin"></div>
+            <div class="doc-spacer"></div>
+            <div class="doc-line w90"></div>
+            <div class="doc-line w85"></div>
+            <div class="doc-line w80"></div>
+            <div class="doc-line w70"></div>
+            <div class="doc-spacer"></div>
+            <div class="doc-line w88"></div>
+            <div class="doc-line w82"></div>
+            <div class="doc-line w60"></div>
+          </div>
+          <div class="doc-score">
+            <span>ATS Score</span>
+            <div class="score-bar"><div class="score-fill" style="width:94%"></div></div>
+            <strong>94%</strong>
+          </div>
+        </div>
+        <!-- Floating badges -->
+        <div class="float-badge badge-tl"><i class="fas fa-magic"></i> AI Generated</div>
+        <div class="float-badge badge-br"><i class="fas fa-download"></i> PDF Ready</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       HOW IT WORKS
+  ══════════════════════════════════════ -->
+  <section class="steps-section" id="how-it-works">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Simple Process</span>
+        <h2 class="sec-title">Three Steps to Your Dream Job</h2>
+        <p class="sec-sub">No account needed. No credit card. Just results.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fas fa-keyboard"></i></div>
+          <h3>Fill Your Details</h3>
+          <p>Enter your name, skills, experience, and the job you're targeting. Takes less than 2 minutes.</p>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fas fa-palette"></i></div>
+          <h3>Pick a Template</h3>
+          <p>Choose from Corporate, Modern, or Minimal — all designed to impress recruiters and pass ATS.</p>
+        </div>
+        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Download & Apply</h3>
+          <p>Export as PDF, print, or copy. Your professional cover letter is ready to send.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FEATURES
+  ══════════════════════════════════════ -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Why LetterForge AI</span>
+        <h2 class="sec-title">Built to Get You Hired</h2>
+        <p class="sec-sub">Every feature is designed with one goal — landing you the interview.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-brain"></i></div><h3>Smart AI Writing</h3><p>Dynamic content engine tailors every paragraph to your specific role and company.</p></div>
+        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-tachometer-alt"></i></div><h3>Live ATS Meter</h3><p>Real-time score shows exactly how well your letter will perform against ATS filters.</p></div>
+        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-layer-group"></i></div><h3>3 Pro Templates</h3><p>Corporate, Modern, and Minimal — switch instantly and see the preview update live.</p></div>
+        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-file-pdf"></i></div><h3>PDF Export</h3><p>Clean, print-ready PDF output that looks identical to the preview — every time.</p></div>
+        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-lock"></i></div><h3>100% Private</h3><p>All data stays in your browser. Nothing is sent to any server. Ever.</p></div>
+        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-sync-alt"></i></div><h3>Auto-Save</h3><p>Your form data is saved automatically so you never lose your work mid-session.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       GENERATOR
+  ══════════════════════════════════════ -->
+  <section class="gen-section" id="generator">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Cover Letter Generator</span>
+        <h2 class="sec-title">Create Your Letter Now</h2>
+        <p class="sec-sub">Fill in the form below and generate a professional cover letter instantly.</p>
+      </div>
+
+      <div class="gen-layout">
+
+        <!-- ── FORM SIDE ── -->
+        <div class="form-side glass">
+          <div class="side-header">
+            <h3><i class="fas fa-pen-nib"></i> Your Details</h3>
+            <button id="clearBtn" class="text-btn"><i class="fas fa-rotate-left"></i> Reset</button>
+          </div>
+
+          <!-- Template Picker -->
+          <div class="tpl-picker">
+            <p class="picker-label">Select Template</p>
+            <div class="tpl-options">
+              <button class="tpl-opt active" data-tpl="corporate">
+                <div class="tpl-thumb corp-thumb">
+                  <div class="tt-bar"></div>
+                  <div class="tt-lines"><div></div><div></div><div></div></div>
+                </div>
+                <span>Corporate</span>
+              </button>
+              <button class="tpl-opt" data-tpl="modern">
+                <div class="tpl-thumb mod-thumb">
+                  <div class="tt-stripe"></div>
+                  <div class="tt-lines"><div></div><div></div><div></div></div>
+                </div>
+                <span>Modern</span>
+              </button>
+              <button class="tpl-opt" data-tpl="minimal">
+                <div class="tpl-thumb min-thumb">
+                  <div class="tt-lines"><div></div><div></div><div></div><div></div></div>
+                </div>
+                <span>Minimal</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <form id="clForm" novalidate autocomplete="off">
+            <div class="form-grid">
+
+              <div class="fg full">
+                <label for="f-name">Full Name <span class="req">*</span></label>
+                <div class="inp-wrap"><i class="fas fa-user"></i>
+                  <input id="f-name" type="text" placeholder="e.g. Jordan Mitchell" maxlength="60" />
+                </div>
+                <div class="row-foot"><span class="err" id="e-name"></span><span class="cc"><span id="c-name">0</span>/60</span></div>
+              </div>
+
+              <div class="fg">
+                <label for="f-email">Email <span class="req">*</span></label>
+                <div class="inp-wrap"><i class="fas fa-envelope"></i>
+                  <input id="f-email" type="email" placeholder="jordan@email.com" />
+                </div>
+                <div class="row-foot"><span class="err" id="e-email"></span></div>
+              </div>
+
+              <div class="fg">
+                <label for="f-phone">Phone</label>
+                <div class="inp-wrap"><i class="fas fa-phone"></i>
+                  <input id="f-phone" type="tel" placeholder="+1 (555) 123-4567" />
+                </div>
+              </div>
+
+              <div class="fg">
+                <label for="f-linkedin">LinkedIn / Portfolio</label>
+                <div class="inp-wrap"><i class="fab fa-linkedin"></i>
+                  <input id="f-linkedin" type="text" placeholder="linkedin.com/in/yourname" maxlength="100" />
+                </div>
+              </div>
+
+              <div class="fg">
+                <label for="f-role">Job Role <span class="req">*</span></label>
+                <div class="inp-wrap"><i class="fas fa-briefcase"></i>
+                  <input id="f-role" type="text" placeholder="e.g. Frontend Developer" maxlength="80" />
+                </div>
+                <div class="row-foot"><span class="err" id="e-role"></span><span class="cc"><span id="c-role">0</span>/80</span></div>
+              </div>
+
+              <div class="fg">
+                <label for="f-company">Company Name <span class="req">*</span></label>
+                <div class="inp-wrap"><i class="fas fa-building"></i>
+                  <input id="f-company" type="text" placeholder="e.g. Spotify, Tesla" maxlength="80" />
+                </div>
+                <div class="row-foot"><span class="err" id="e-company"></span><span class="cc"><span id="c-company">0</span>/80</span></div>
+              </div>
+
+              <div class="fg full">
+                <label for="f-skills">Key Skills <span class="req">*</span></label>
+                <div class="inp-wrap"><i class="fas fa-code"></i>
+                  <input id="f-skills" type="text" placeholder="e.g. React, TypeScript, Node.js, REST APIs" maxlength="200" />
+                </div>
+                <div class="row-foot"><span class="err" id="e-skills"></span><span class="cc"><span id="c-skills">0</span>/200</span></div>
+                <p class="hint"><i class="fas fa-info-circle"></i> Comma-separated skills boost your ATS score</p>
+              </div>
+
+              <div class="fg full">
+                <label for="f-exp">Work Experience</label>
+                <div class="inp-wrap ta-wrap"><i class="fas fa-history ta-ico"></i>
+                  <textarea id="f-exp" rows="3" placeholder="Describe your relevant experience, internships, or key projects..." maxlength="500"></textarea>
+                </div>
+                <div class="row-foot"><span></span><span class="cc"><span id="c-exp">0</span>/500</span></div>
+              </div>
+
+              <div class="fg full">
+                <label for="f-edu">Education</label>
+                <div class="inp-wrap"><i class="fas fa-graduation-cap"></i>
+                  <input id="f-edu" type="text" placeholder="e.g. B.Sc. Computer Science, Stanford University, 2024" maxlength="150" />
+                </div>
+                <div class="row-foot"><span></span><span class="cc"><span id="c-edu">0</span>/150</span></div>
+              </div>
+
+              <div class="fg full">
+                <label for="f-why">Why This Job? <span class="req">*</span></label>
+                <div class="inp-wrap ta-wrap"><i class="fas fa-heart ta-ico"></i>
+                  <textarea id="f-why" rows="3" placeholder="What excites you about this role and company? Be specific..." maxlength="600"></textarea>
+                </div>
+                <div class="row-foot"><span class="err" id="e-why"></span><span class="cc"><span id="c-why">0</span>/600</span></div>
+              </div>
+
+              <div class="fg full">
+                <label for="f-extra">Additional Info</label>
+                <div class="inp-wrap ta-wrap"><i class="fas fa-plus-circle ta-ico"></i>
+                  <textarea id="f-extra" rows="2" placeholder="Certifications, awards, portfolio URL, languages spoken..." maxlength="400"></textarea>
+                </div>
+                <div class="row-foot"><span></span><span class="cc"><span id="c-extra">0</span>/400</span></div>
+              </div>
+
+            </div><!-- /form-grid -->
+
+            <!-- ATS Meter -->
+            <div class="ats-box glass-inner">
+              <div class="ats-top">
+                <span><i class="fas fa-chart-bar"></i> ATS Optimization Score</span>
+                <span class="ats-pct" id="atsPct">0%</span>
+              </div>
+              <div class="ats-track"><div class="ats-fill" id="atsFill"></div></div>
+              <div class="ats-items" id="atsItems">
+                <div class="ats-item" id="ai-name"><i class="far fa-circle"></i> Name</div>
+                <div class="ats-item" id="ai-role"><i class="far fa-circle"></i> Job Role</div>
+                <div class="ats-item" id="ai-skills"><i class="far fa-circle"></i> Skills (2+)</div>
+                <div class="ats-item" id="ai-exp"><i class="far fa-circle"></i> Experience</div>
+                <div class="ats-item" id="ai-edu"><i class="far fa-circle"></i> Education</div>
+                <div class="ats-item" id="ai-why"><i class="far fa-circle"></i> Motivation</div>
+              </div>
+            </div>
+
+            <button type="submit" class="gen-btn" id="genBtn">
+              <i class="fas fa-wand-magic-sparkles"></i>
+              <span id="genBtnTxt">Generate Cover Letter</span>
+              <div class="spin" id="genSpin"></div>
+            </button>
+          </form>
+        </div><!-- /form-side -->
+
+        <!-- ── PREVIEW SIDE ── -->
+        <div class="preview-side">
+          <div class="preview-bar glass">
+            <span class="preview-title"><i class="fas fa-eye"></i> Live Preview</span>
+            <div class="preview-acts">
+              <button id="copyBtn" class="act-btn" title="Copy text"><i class="fas fa-copy"></i><span>Copy</span></button>
+              <button id="printBtn" class="act-btn" title="Print"><i class="fas fa-print"></i><span>Print</span></button>
+              <button id="pdfBtn" class="act-btn primary-act" title="Download PDF"><i class="fas fa-file-pdf"></i><span>PDF</span></button>
+            </div>
+          </div>
+
+          <div class="preview-doc glass" id="previewDoc">
+            <div class="empty-state" id="emptyState">
+              <div class="empty-ico"><i class="fas fa-file-signature"></i></div>
+              <h4>Your letter will appear here</h4>
+              <p>Complete the form and hit "Generate Cover Letter" to see your professional letter rendered live.</p>
+            </div>
+            <div id="letterOut" class="letter-out"></div>
+          </div>
+        </div><!-- /preview-side -->
+
+      </div><!-- /gen-layout -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <span class="sec-tag">About LetterForge AI</span>
+          <h2 class="sec-title left">Made for the Modern Job Seeker</h2>
+          <p>Job hunting is stressful enough. Writing a cover letter shouldn't add to that. LetterForge AI was built by developers who've been through the grind — rejected applications, ATS black holes, and hours spent rewriting the same letter.</p>
+          <p>We built the tool we wished existed: fast, smart, private, and completely free.</p>
+          <ul class="about-list">
+            <li><i class="fas fa-check-circle"></i> Works for all industries and experience levels</li>
+            <li><i class="fas fa-check-circle"></i> No account or sign-up required</li>
+            <li><i class="fas fa-check-circle"></i> Data never leaves your browser</li>
+            <li><i class="fas fa-check-circle"></i> Unlimited generations, always free</li>
+          </ul>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-grid glass">
+            <div class="stat-box"><span class="stat-big">80K+</span><span>Letters Created</span></div>
+            <div class="stat-box"><span class="stat-big">97%</span><span>ATS Pass Rate</span></div>
+            <div class="stat-box"><span class="stat-big">3</span><span>Pro Templates</span></div>
+            <div class="stat-box"><span class="stat-big">∞</span><span>Free Generations</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════════════ -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Success Stories</span>
+        <h2 class="sec-title">Real People. Real Results.</h2>
+        <p class="sec-sub">Join thousands who landed interviews using LetterForge AI.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card glass reveal">
+          <div class="review-stars">★★★★★</div>
+          <p>"I applied to 12 companies in one afternoon using LetterForge. Got 5 interview calls within a week. The ATS score feature is genuinely useful — not just a gimmick."</p>
+          <div class="reviewer">
+            <img class="rev-photo" src="https://ui-avatars.com/api/?name=Aisha+Kamara&background=f97316&color=fff&size=80&bold=true&rounded=true" alt="Aisha Kamara" />
+            <div><strong>Aisha Kamara</strong><span>UX Designer @ Figma</span></div>
+          </div>
+        </div>
+        <div class="review-card glass reveal">
+          <div class="review-stars">★★★★★</div>
+          <p>"As a career changer, I struggled to write letters that didn't sound generic. LetterForge helped me frame my transferable skills perfectly. Landed my first tech role!"</p>
+          <div class="reviewer">
+            <img class="rev-photo" src="https://ui-avatars.com/api/?name=Daniel+Lowe&background=6366f1&color=fff&size=80&bold=true&rounded=true" alt="Daniel Lowe" />
+            <div><strong>Daniel Lowe</strong><span>Software Engineer @ Shopify</span></div>
+          </div>
+        </div>
+        <div class="review-card glass reveal">
+          <div class="review-stars">★★★★★</div>
+          <p>"Used this for my internship applications during college. The Corporate template looked so polished that my professor asked if I hired someone to write it. 10/10."</p>
+          <div class="reviewer">
+            <img class="rev-photo" src="https://ui-avatars.com/api/?name=Nina+Patel&background=10b981&color=fff&size=80&bold=true&rounded=true" alt="Nina Patel" />
+            <div><strong>Nina Patel</strong><span>Data Science Intern @ Netflix</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">FAQ</span>
+        <h2 class="sec-title">Got Questions?</h2>
+      </div>
+      <div class="faq-wrap">
+        <div class="faq-card glass reveal">
+          <button class="faq-q"><span>Is LetterForge AI really free?</span><i class="fas fa-plus faq-ico"></i></button>
+          <div class="faq-a"><p>Yes — 100% free, unlimited generations, no sign-up, no credit card. We believe everyone deserves access to professional tools.</p></div>
+        </div>
+        <div class="faq-card glass reveal">
+          <button class="faq-q"><span>How does the ATS score work?</span><i class="fas fa-plus faq-ico"></i></button>
+          <div class="faq-a"><p>The score checks six key factors: your name, job role, skills (2+ recommended), experience, education, and motivation. Each completed field adds to your score. A score above 80% means your letter is well-optimized.</p></div>
+        </div>
+        <div class="faq-card glass reveal">
+          <button class="faq-q"><span>Is my personal data safe?</span><i class="fas fa-plus faq-ico"></i></button>
+          <div class="faq-a"><p>Completely. Everything runs in your browser using localStorage. No data is ever transmitted to any server. You can verify this by checking your browser's network tab.</p></div>
+        </div>
+        <div class="faq-card glass reveal">
+          <button class="faq-q"><span>Can I use this for internship applications?</span><i class="fas fa-plus faq-ico"></i></button>
+          <div class="faq-a"><p>Absolutely. LetterForge AI works for internships, entry-level roles, senior positions, and career changes across all industries.</p></div>
+        </div>
+        <div class="faq-card glass reveal">
+          <button class="faq-q"><span>How do I save as PDF?</span><i class="fas fa-plus faq-ico"></i></button>
+          <div class="faq-a"><p>Click the "PDF" button after generating your letter. A clean print window opens — in the print dialog, change the destination to "Save as PDF" and click Save.</p></div>
+        </div>
+        <div class="faq-card glass reveal">
+          <button class="faq-q"><span>Can I switch templates after generating?</span><i class="fas fa-plus faq-ico"></i></button>
+          <div class="faq-a"><p>Yes! Click any template option and the preview updates instantly without needing to regenerate.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo"><div class="logo-icon"><i class="fas fa-feather-alt"></i></div><span>Letter<strong>Forge</strong> <em>AI</em></span></div>
+          <p>The smartest, fastest way to write cover letters that actually get you hired.</p>
+          <div class="socials">
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Product</h4><a href="#features">Features</a><a href="#generator">Generator</a><a href="#reviews">Reviews</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="#how-it-works">How It Works</a><a href="#faq">FAQ</a><a href="#about">About</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Cookies</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 LetterForge AI. All rights reserved. Built with <i class="fas fa-heart"></i> for job seekers everywhere.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
