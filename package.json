@@ -1,0 +1,13 @@
+{
+  "name": "letterforge-ai",
+  "version": "1.0.0",
+  "description": "AI-Powered Job Application Assistant - Cover Letter Generator, Interview Prep, Career Coach",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "start": "npx serve . -p 3000"
+  },
+  "keywords": ["cover letter", "resume", "job application", "career", "interview"],
+  "author": "LetterForge AI",
+  "license": "MIT"
+}
