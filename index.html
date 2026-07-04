@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LetterForge AI — Smart Cover Letter Generator</title>
-  <meta name="description" content="Create professional cover letters instantly with LetterForge AI. Free online cover letter builder with modern templates.">
-  <meta name="keywords" content="cover letter builder, cover letter generator, resume tool, job application letter">
-  <meta name="author" content="Your Name">
+  <title>LetterForge AI — AI-Powered Job Application Assistant</title>
+  <meta name="description" content="Create professional cover letters, analyze job matches, generate interview questions, and optimize your job applications with AI intelligence.">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -19,9 +18,9 @@
   <!-- Toast -->
   <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
-  <!-- ══════════════════════════════════════
+  <!-- ════════════════════════════════════════════════════════════
        NAVBAR
-  ══════════════════════════════════════ -->
+  ════════════════════════════════════════════════════════════ -->
   <header class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#home" class="logo">
@@ -30,18 +29,19 @@
       </a>
 
       <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
-        <a href="#home"         class="nav-item">Home</a>
-        <a href="#how-it-works" class="nav-item">How It Works</a>
-        <a href="#generator"    class="nav-item">Generator</a>
-        <a href="#reviews"      class="nav-item">Reviews</a>
-        <a href="#faq"          class="nav-item">FAQ</a>
+        <a href="#home" class="nav-item">Home</a>
+        <a href="#dashboard" class="nav-item">Dashboard</a>
+        <a href="#features" class="nav-item">Features</a>
+        <a href="#generator" class="nav-item">Generator</a>
+        <a href="#interview" class="nav-item">Interview</a>
+        <a href="#career" class="nav-item">Career</a>
       </nav>
 
       <div class="nav-controls">
         <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">
           <i class="fas fa-moon" id="themeIco"></i>
         </button>
-        <a href="#generator" class="pill-btn">Try Free <i class="fas fa-arrow-right"></i></a>
+        <a href="#generator" class="pill-btn">Get Started <i class="fas fa-arrow-right"></i></a>
         <button id="menuBtn" class="icon-btn hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -49,34 +49,34 @@
     </div>
   </header>
 
-  <!-- ══════════════════════════════════════
-       HERO
-  ══════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════════════════════════
+       HERO SECTION
+  ════════════════════════════════════════════════════════════ -->
   <section class="hero" id="home">
     <div class="hero-wrap">
       <div class="hero-left">
         <div class="hero-chip reveal">
-          <span class="chip-dot"></span> AI-Powered · ATS-Optimized · Free Forever
+          <span class="chip-dot"></span> AI-Powered · Offline · Free Forever
         </div>
         <h1 class="hero-h1 reveal">
-          Create Professional<br />
+          Your Complete<br />
           <span class="type-wrap"><span id="typeEl" class="typed"></span><span class="cursor">|</span></span>
         </h1>
         <p class="hero-sub reveal">
-          Stop staring at a blank page. LetterForge AI crafts personalized, keyword-rich cover letters that beat ATS filters and impress hiring managers — in under 60 seconds.
+          LetterForge AI is your intelligent job application assistant. Generate cover letters, analyze job matches, predict success, prepare for interviews, and optimize your career — all without any APIs.
         </p>
         <div class="hero-btns reveal">
-          <a href="#generator" class="btn-main">
-            <i class="fas fa-bolt"></i> Generate My Letter
+          <a href="#dashboard" class="btn-main">
+            <i class="fas fa-rocket"></i> Launch Dashboard
           </a>
-          <a href="#how-it-works" class="btn-ghost">
-            <i class="fas fa-play"></i> See How It Works
+          <a href="#features" class="btn-ghost">
+            <i class="fas fa-th-large"></i> Explore Features
           </a>
         </div>
         <div class="hero-trust reveal">
-          <div class="trust-item"><i class="fas fa-users"></i> <span>80,000+ letters created</span></div>
+          <div class="trust-item"><i class="fas fa-users"></i> <span>80,000+ users</span></div>
           <div class="trust-sep"></div>
-          <div class="trust-item"><i class="fas fa-shield-alt"></i> <span>100% private & free</span></div>
+          <div class="trust-item"><i class="fas fa-shield-alt"></i> <span>100% offline</span></div>
           <div class="trust-sep"></div>
           <div class="trust-item"><i class="fas fa-star"></i> <span>4.9 / 5 rating</span></div>
         </div>
@@ -86,8 +86,8 @@
         <div class="doc-card">
           <div class="doc-topbar">
             <div class="doc-dots"><span></span><span></span><span></span></div>
-            <span class="doc-title"><i class="fas fa-file-alt"></i> cover_letter.pdf</span>
-            <span class="doc-badge"><i class="fas fa-check"></i> ATS Ready</span>
+            <span class="doc-title"><i class="fas fa-file-alt"></i> job_application.ai</span>
+            <span class="doc-badge"><i class="fas fa-check"></i> Optimized</span>
           </div>
           <div class="doc-body">
             <div class="doc-line w75 bold"></div>
@@ -103,77 +103,409 @@
             <div class="doc-line w60"></div>
           </div>
           <div class="doc-score">
-            <span>ATS Score</span>
+            <span>AI Score</span>
             <div class="score-bar"><div class="score-fill" style="width:94%"></div></div>
             <strong>94%</strong>
           </div>
         </div>
-        <!-- Floating badges -->
         <div class="float-badge badge-tl"><i class="fas fa-magic"></i> AI Generated</div>
         <div class="float-badge badge-br"><i class="fas fa-download"></i> PDF Ready</div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       HOW IT WORKS
-  ══════════════════════════════════════ -->
-  <section class="steps-section" id="how-it-works">
+  <!-- ════════════════════════════════════════════════════════════
+       BENTO GRID DASHBOARD
+  ════════════════════════════════════════════════════════════ -->
+  <section class="dashboard-section" id="dashboard">
     <div class="container">
       <div class="sec-head">
-        <span class="sec-tag">Simple Process</span>
-        <h2 class="sec-title">Three Steps to Your Dream Job</h2>
-        <p class="sec-sub">No account needed. No credit card. Just results.</p>
+        <span class="sec-tag">Dashboard</span>
+        <h2 class="sec-title">Your Career Command Center</h2>
+        <p class="sec-sub">Track your job application progress with real-time AI insights</p>
       </div>
-      <div class="steps-grid">
-        <div class="step-card reveal">
-          <div class="step-num">01</div>
-          <div class="step-icon"><i class="fas fa-keyboard"></i></div>
-          <h3>Fill Your Details</h3>
-          <p>Enter your name, skills, experience, and the job you're targeting. Takes less than 2 minutes.</p>
+
+      <!-- KPI Cards Row -->
+      <div class="kpi-grid">
+        <div class="kpi-card glass reveal" data-kpi="ats">
+          <div class="kpi-ico"><i class="fas fa-file-alt"></i></div>
+          <div class="kpi-content">
+            <span class="kpi-label">ATS Score</span>
+            <span class="kpi-value" id="kpiAts">0%</span>
+          </div>
+          <canvas class="kpi-ring" id="ringAts" width="60" height="60"></canvas>
         </div>
-        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
-        <div class="step-card reveal">
-          <div class="step-num">02</div>
-          <div class="step-icon"><i class="fas fa-palette"></i></div>
-          <h3>Pick a Template</h3>
-          <p>Choose from Corporate, Modern, or Minimal — all designed to impress recruiters and pass ATS.</p>
+
+        <div class="kpi-card glass reveal" data-kpi="recruiter">
+          <div class="kpi-ico"><i class="fas fa-user-tie"></i></div>
+          <div class="kpi-content">
+            <span class="kpi-label">Recruiter Score</span>
+            <span class="kpi-value" id="kpiRecruiter">0</span>
+          </div>
+          <canvas class="kpi-ring" id="ringRecruiter" width="60" height="60"></canvas>
         </div>
-        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
-        <div class="step-card reveal">
-          <div class="step-num">03</div>
-          <div class="step-icon"><i class="fas fa-rocket"></i></div>
-          <h3>Download & Apply</h3>
-          <p>Export as PDF, print, or copy. Your professional cover letter is ready to send.</p>
+
+        <div class="kpi-card glass reveal" data-kpi="match">
+          <div class="kpi-ico"><i class="fas fa-crosshairs"></i></div>
+          <div class="kpi-content">
+            <span class="kpi-label">Job Match</span>
+            <span class="kpi-value" id="kpiMatch">0%</span>
+          </div>
+          <canvas class="kpi-ring" id="ringMatch" width="60" height="60"></canvas>
+        </div>
+
+        <div class="kpi-card glass reveal" data-kpi="success">
+          <div class="kpi-ico"><i class="fas fa-chart-line"></i></div>
+          <div class="kpi-content">
+            <span class="kpi-label">Success Rate</span>
+            <span class="kpi-value" id="kpiSuccess">0%</span>
+          </div>
+          <canvas class="kpi-ring" id="ringSuccess" width="60" height="60"></canvas>
+        </div>
+
+        <div class="kpi-card glass reveal" data-kpi="letters">
+          <div class="kpi-ico"><i class="fas fa-envelope-open-text"></i></div>
+          <div class="kpi-content">
+            <span class="kpi-label">Letters Created</span>
+            <span class="kpi-value" id="kpiLetters">0</span>
+          </div>
+          <span class="kpi-trend up"><i class="fas fa-arrow-up"></i></span>
+        </div>
+
+        <div class="kpi-card glass reveal" data-kpi="interviews">
+          <div class="kpi-ico"><i class="fas fa-handshake"></i></div>
+          <div class="kpi-content">
+            <span class="kpi-label">Interview Chances</span>
+            <span class="kpi-value" id="kpiInterviews">0</span>
+          </div>
+          <span class="kpi-trend up"><i class="fas fa-arrow-up"></i></span>
+        </div>
+      </div>
+
+      <!-- Bento Grid Widgets -->
+      <div class="bento-grid" id="bentoGrid">
+        <!-- Large Widget: Skill Gap Tracker -->
+        <div class="bento-item bento-lg glass reveal">
+          <div class="bento-head">
+            <h3><i class="fas fa-chart-radar"></i> Skill Gap Analysis</h3>
+            <button class="bento-action" id="btnSkillGap"><i class="fas fa-expand"></i></button>
+          </div>
+          <div class="bento-body">
+            <canvas id="chartSkillRadar" width="300" height="220"></canvas>
+            <div class="skill-gap-list" id="skillGapList">
+              <p class="empty-hint">Complete a job match analysis to see skill gaps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medium Widget: Success Predictor -->
+        <div class="bento-item bento-md glass reveal">
+          <div class="bento-head">
+            <h3><i class="fas fa-magic"></i> Success Probability</h3>
+          </div>
+          <div class="bento-body success-gauge">
+            <div class="gauge-container">
+              <canvas id="gaugeSuccess" width="200" height="120"></canvas>
+              <span class="gauge-value" id="gaugeValue">0%</span>
+            </div>
+            <p class="gauge-label" id="gaugeLabel">Analyze your application</p>
+          </div>
+        </div>
+
+        <!-- Medium Widget: Activity Timeline -->
+        <div class="bento-item bento-md glass reveal">
+          <div class="bento-head">
+            <h3><i class="fas fa-history"></i> Recent Activity</h3>
+          </div>
+          <div class="bento-body timeline" id="activityTimeline">
+            <div class="timeline-item">
+              <span class="timeline-dot"></span>
+              <span class="timeline-text">Dashboard ready</span>
+              <span class="timeline-time">Now</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small Widgets -->
+        <div class="bento-item bento-sm glass reveal">
+          <div class="bento-head">
+            <h4><i class="fas fa-brain"></i> LinkedIn Score</h4>
+          </div>
+          <div class="bento-body centered">
+            <span class="big-number" id="linkedinScore">--</span>
+            <span class="score-label">Not analyzed</span>
+          </div>
+        </div>
+
+        <div class="bento-item bento-sm glass reveal">
+          <div class="bento-head">
+            <h4><i class="fab fa-github"></i> GitHub Score</h4>
+          </div>
+          <div class="bento-body centered">
+            <span class="big-number" id="githubScore">--</span>
+            <span class="score-label">Not analyzed</span>
+          </div>
+        </div>
+
+        <div class="bento-item bento-sm glass reveal">
+          <div class="bento-head">
+            <h4><i class="fas fa-briefcase"></i> Resume Strength</h4>
+          </div>
+          <div class="bento-body centered">
+            <span class="big-number" id="resumeScore">--</span>
+            <span class="score-label">Upload resume</span>
+          </div>
+        </div>
+
+        <div class="bento-item bento-sm glass reveal">
+          <div class="bento-head">
+            <h4><i class="fas fa-clipboard-check"></i> Portfolio Score</h4>
+          </div>
+          <div class="bento-body centered">
+            <span class="big-number" id="portfolioScore">--</span>
+            <span class="score-label">Add portfolio</span>
+          </div>
+        </div>
+
+        <!-- Wide Widget: Application Funnel -->
+        <div class="bento-item bento-wide glass reveal">
+          <div class="bento-head">
+            <h3><i class="fas fa-filter"></i> Application Funnel</h3>
+          </div>
+          <div class="bento-body funnel">
+            <div class="funnel-stage" id="funnelApplied">
+              <span class="funnel-count">0</span>
+              <span class="funnel-label">Applications</span>
+              <div class="funnel-bar" style="width: 100%"></div>
+            </div>
+            <div class="funnel-stage" id="funnelScreened">
+              <span class="funnel-count">0</span>
+              <span class="funnel-label">ATS Passed</span>
+              <div class="funnel-bar" style="width: 75%"></div>
+            </div>
+            <div class="funnel-stage" id="funnelInterview">
+              <span class="funnel-count">0</span>
+              <span class="funnel-label">Interviews</span>
+              <div class="funnel-bar" style="width: 40%"></div>
+            </div>
+            <div class="funnel-stage" id="funnelOffers">
+              <span class="funnel-count">0</span>
+              <span class="funnel-label">Offers</span>
+              <div class="funnel-bar" style="width: 15%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Accordion View -->
+      <div class="accordion-view" id="accordionView">
+        <div class="accordion-panel" data-panel="0">
+          <button class="accordion-header">
+            <span><i class="fas fa-chart-radar"></i> Skill Gap Analysis</span>
+            <i class="fas fa-plus accordion-ico"></i>
+          </button>
+          <div class="accordion-content">
+            <canvas id="chartSkillRadarMobile" width="280" height="200"></canvas>
+          </div>
+        </div>
+        <div class="accordion-panel" data-panel="1">
+          <button class="accordion-header">
+            <span><i class="fas fa-magic"></i> Success Probability</span>
+            <i class="fas fa-plus accordion-ico"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="gauge-container">
+              <canvas id="gaugeSuccessMobile" width="180" height="100"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-panel" data-panel="2">
+          <button class="accordion-header">
+            <span><i class="fas fa-history"></i> Recent Activity</span>
+            <i class="fas fa-plus accordion-ico"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="timeline" id="activityTimelineMobile"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       FEATURES
-  ══════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════════════════════════
+       FEATURES SECTION (Bento to Accordion Responsive)
+  ════════════════════════════════════════════════════════════ -->
   <section class="features-section" id="features">
     <div class="container">
       <div class="sec-head">
-        <span class="sec-tag">Why LetterForge AI</span>
-        <h2 class="sec-title">Built to Get You Hired</h2>
-        <p class="sec-sub">Every feature is designed with one goal — landing you the interview.</p>
+        <span class="sec-tag">Features</span>
+        <h2 class="sec-title">15 AI-Powered Tools</h2>
+        <p class="sec-sub">Everything works offline — no APIs required</p>
       </div>
-      <div class="feat-grid">
-        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-brain"></i></div><h3>Smart AI Writing</h3><p>Dynamic content engine tailors every paragraph to your specific role and company.</p></div>
-        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-tachometer-alt"></i></div><h3>Live ATS Meter</h3><p>Real-time score shows exactly how well your letter will perform against ATS filters.</p></div>
-        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-layer-group"></i></div><h3>3 Pro Templates</h3><p>Corporate, Modern, and Minimal — switch instantly and see the preview update live.</p></div>
-        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-file-pdf"></i></div><h3>PDF Export</h3><p>Clean, print-ready PDF output that looks identical to the preview — every time.</p></div>
-        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-lock"></i></div><h3>100% Private</h3><p>All data stays in your browser. Nothing is sent to any server. Ever.</p></div>
-        <div class="feat-card reveal"><div class="feat-ico"><i class="fas fa-sync-alt"></i></div><h3>Auto-Save</h3><p>Your form data is saved automatically so you never lose your work mid-session.</p></div>
+
+      <div class="feature-grid" id="featureGrid">
+        <!-- Desktop Bento Grid -->
+        <div class="bento-feature-grid" id="bentoFeatureGrid">
+          <div class="bento-card bento-large active" data-feature="recruiter">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-user-tie"></i></div>
+              <h3>Recruiter Review Engine</h3>
+              <p>AI-powered analysis of your cover letters with actionable feedback.</p>
+              <div class="bento-card-expanded">
+                <ul>
+                  <li><i class="fas fa-check"></i> Cover letter analysis</li>
+                  <li><i class="fas fa-check"></i> Tone & grammar scoring</li>
+                  <li><i class="fas fa-check"></i> ATS optimization</li>
+                  <li><i class="fas fa-check"></i> Improvement suggestions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="interview">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-question-circle"></i></div>
+              <h3>Interview Generator</h3>
+              <p>Dynamic question sets based on your skills and target role.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="jobmatch">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-crosshairs"></i></div>
+              <h3>Job Match Analyzer</h3>
+              <p>Compare your skills against job descriptions with precision.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="success">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Success Predictor</h3>
+              <p>Weighted algorithm predicts your application success.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="career">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-road"></i></div>
+              <h3>Career Coach</h3>
+              <p>Personalized roadmaps and skill development plans.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="strategy">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-chess"></i></div>
+              <h3>Application Strategy</h3>
+              <p>Weekly plans and company recommendations.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="linkedin">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fab fa-linkedin"></i></div>
+              <h3>LinkedIn Analyzer</h3>
+              <p>Optimize your profile for recruiter visibility.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="github">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fab fa-github"></i></div>
+              <h3>GitHub Analyzer</h3>
+              <p>Showcase your portfolio effectively.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="networking">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-network-wired"></i></div>
+              <h3>Networking Messages</h3>
+              <p>Professional outreach templates.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="thankyou">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-envelope-open-text"></i></div>
+              <h3>Thank You Emails</h3>
+              <p>Post-interview follow-up templates.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="salary">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-dollar-sign"></i></div>
+              <h3>Salary Negotiation</h3>
+              <p>Professional negotiation templates.</p>
+            </div>
+          </div>
+
+          <div class="bento-card" data-feature="portfolio">
+            <div class="bento-card-inner">
+              <div class="bento-card-icon"><i class="fas fa-globe"></i></div>
+              <h3>Portfolio Analyzer</h3>
+              <p>Improve your portfolio presentation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Accordion -->
+        <div class="feature-accordion" id="featureAccordion">
+          <div class="accordion-panel" data-panel="0">
+            <button class="accordion-header">
+              <span><i class="fas fa-user-tie"></i> Recruiter Review Engine</span>
+              <i class="fas fa-plus accordion-ico"></i>
+            </button>
+            <div class="accordion-content">
+              <p>AI-powered analysis of your cover letters with actionable feedback.</p>
+            </div>
+          </div>
+          <div class="accordion-panel" data-panel="1">
+            <button class="accordion-header">
+              <span><i class="fas fa-question-circle"></i> Interview Generator</span>
+              <i class="fas fa-plus accordion-ico"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Dynamic question sets based on your skills and target role.</p>
+            </div>
+          </div>
+          <div class="accordion-panel" data-panel="2">
+            <button class="accordion-header">
+              <span><i class="fas fa-crosshairs"></i> Job Match Analyzer</span>
+              <i class="fas fa-plus accordion-ico"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Compare your skills against job descriptions with precision.</p>
+            </div>
+          </div>
+          <div class="accordion-panel" data-panel="3">
+            <button class="accordion-header">
+              <span><i class="fas fa-chart-line"></i> Success Predictor</span>
+              <i class="fas fa-plus accordion-ico"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Weighted algorithm predicts your application success.</p>
+            </div>
+          </div>
+          <div class="accordion-panel" data-panel="4">
+            <button class="accordion-header">
+              <span><i class="fas fa-road"></i> Career Coach</span>
+              <i class="fas fa-plus accordion-ico"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Personalized roadmaps and skill development plans.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       GENERATOR
-  ══════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════════════════════════
+       COVER LETTER GENERATOR
+  ════════════════════════════════════════════════════════════ -->
   <section class="gen-section" id="generator">
     <div class="container">
       <div class="sec-head">
@@ -183,8 +515,7 @@
       </div>
 
       <div class="gen-layout">
-
-        <!-- ── FORM SIDE ── -->
+        <!-- Form Side -->
         <div class="form-side glass">
           <div class="side-header">
             <h3><i class="fas fa-pen-nib"></i> Your Details</h3>
@@ -195,121 +526,80 @@
           <div class="tpl-picker">
             <p class="picker-label">Select Template</p>
             <div class="tpl-options">
-              <button class="tpl-opt active" data-tpl="corporate">
-                <div class="tpl-thumb corp-thumb">
-                  <div class="tt-bar"></div>
-                  <div class="tt-lines"><div></div><div></div><div></div></div>
-                </div>
-                <span>Corporate</span>
-              </button>
-              <button class="tpl-opt" data-tpl="modern">
-                <div class="tpl-thumb mod-thumb">
-                  <div class="tt-stripe"></div>
-                  <div class="tt-lines"><div></div><div></div><div></div></div>
-                </div>
-                <span>Modern</span>
-              </button>
-              <button class="tpl-opt" data-tpl="minimal">
-                <div class="tpl-thumb min-thumb">
-                  <div class="tt-lines"><div></div><div></div><div></div><div></div></div>
-                </div>
-                <span>Minimal</span>
-              </button>
+              <button class="tpl-opt active" data-tpl="corporate"><div class="tpl-thumb corp-thumb"><div class="tt-bar"></div><div class="tt-lines"><div></div><div></div><div></div></div></div><span>Corporate</span></button>
+              <button class="tpl-opt" data-tpl="modern"><div class="tpl-thumb mod-thumb"><div class="tt-stripe"></div><div class="tt-lines"><div></div><div></div><div></div></div></div><span>Modern</span></button>
+              <button class="tpl-opt" data-tpl="minimal"><div class="tpl-thumb min-thumb"><div class="tt-lines"><div></div><div></div><div></div><div></div></div></div><span>Minimal</span></button>
             </div>
           </div>
 
           <!-- Form -->
           <form id="clForm" novalidate autocomplete="off">
             <div class="form-grid">
-
               <div class="fg full">
                 <label for="f-name">Full Name <span class="req">*</span></label>
-                <div class="inp-wrap"><i class="fas fa-user"></i>
-                  <input id="f-name" type="text" placeholder="e.g. Jordan Mitchell" maxlength="60" />
-                </div>
+                <div class="inp-wrap"><i class="fas fa-user"></i><input id="f-name" type="text" placeholder="e.g. Jordan Mitchell" maxlength="60" /></div>
                 <div class="row-foot"><span class="err" id="e-name"></span><span class="cc"><span id="c-name">0</span>/60</span></div>
               </div>
 
               <div class="fg">
                 <label for="f-email">Email <span class="req">*</span></label>
-                <div class="inp-wrap"><i class="fas fa-envelope"></i>
-                  <input id="f-email" type="email" placeholder="jordan@email.com" />
-                </div>
+                <div class="inp-wrap"><i class="fas fa-envelope"></i><input id="f-email" type="email" placeholder="jordan@email.com" /></div>
                 <div class="row-foot"><span class="err" id="e-email"></span></div>
               </div>
 
               <div class="fg">
                 <label for="f-phone">Phone</label>
-                <div class="inp-wrap"><i class="fas fa-phone"></i>
-                  <input id="f-phone" type="tel" placeholder="+1 (555) 123-4567" />
-                </div>
+                <div class="inp-wrap"><i class="fas fa-phone"></i><input id="f-phone" type="tel" placeholder="+1 (555) 123-4567" /></div>
               </div>
 
               <div class="fg">
                 <label for="f-linkedin">LinkedIn / Portfolio</label>
-                <div class="inp-wrap"><i class="fab fa-linkedin"></i>
-                  <input id="f-linkedin" type="text" placeholder="linkedin.com/in/yourname" maxlength="100" />
-                </div>
+                <div class="inp-wrap"><i class="fab fa-linkedin"></i><input id="f-linkedin" type="text" placeholder="linkedin.com/in/yourname" maxlength="100" /></div>
               </div>
 
               <div class="fg">
                 <label for="f-role">Job Role <span class="req">*</span></label>
-                <div class="inp-wrap"><i class="fas fa-briefcase"></i>
-                  <input id="f-role" type="text" placeholder="e.g. Frontend Developer" maxlength="80" />
-                </div>
+                <div class="inp-wrap"><i class="fas fa-briefcase"></i><input id="f-role" type="text" placeholder="e.g. Frontend Developer" maxlength="80" /></div>
                 <div class="row-foot"><span class="err" id="e-role"></span><span class="cc"><span id="c-role">0</span>/80</span></div>
               </div>
 
               <div class="fg">
                 <label for="f-company">Company Name <span class="req">*</span></label>
-                <div class="inp-wrap"><i class="fas fa-building"></i>
-                  <input id="f-company" type="text" placeholder="e.g. Spotify, Tesla" maxlength="80" />
-                </div>
+                <div class="inp-wrap"><i class="fas fa-building"></i><input id="f-company" type="text" placeholder="e.g. Spotify, Tesla" maxlength="80" /></div>
                 <div class="row-foot"><span class="err" id="e-company"></span><span class="cc"><span id="c-company">0</span>/80</span></div>
               </div>
 
               <div class="fg full">
                 <label for="f-skills">Key Skills <span class="req">*</span></label>
-                <div class="inp-wrap"><i class="fas fa-code"></i>
-                  <input id="f-skills" type="text" placeholder="e.g. React, TypeScript, Node.js, REST APIs" maxlength="200" />
-                </div>
+                <div class="inp-wrap"><i class="fas fa-code"></i><input id="f-skills" type="text" placeholder="e.g. React, TypeScript, Node.js, REST APIs" maxlength="200" /></div>
                 <div class="row-foot"><span class="err" id="e-skills"></span><span class="cc"><span id="c-skills">0</span>/200</span></div>
                 <p class="hint"><i class="fas fa-info-circle"></i> Comma-separated skills boost your ATS score</p>
               </div>
 
               <div class="fg full">
                 <label for="f-exp">Work Experience</label>
-                <div class="inp-wrap ta-wrap"><i class="fas fa-history ta-ico"></i>
-                  <textarea id="f-exp" rows="3" placeholder="Describe your relevant experience, internships, or key projects..." maxlength="500"></textarea>
-                </div>
+                <div class="inp-wrap ta-wrap"><i class="fas fa-history ta-ico"></i><textarea id="f-exp" rows="3" placeholder="Describe your relevant experience, internships, or key projects..." maxlength="500"></textarea></div>
                 <div class="row-foot"><span></span><span class="cc"><span id="c-exp">0</span>/500</span></div>
               </div>
 
               <div class="fg full">
                 <label for="f-edu">Education</label>
-                <div class="inp-wrap"><i class="fas fa-graduation-cap"></i>
-                  <input id="f-edu" type="text" placeholder="e.g. B.Sc. Computer Science, Stanford University, 2024" maxlength="150" />
-                </div>
+                <div class="inp-wrap"><i class="fas fa-graduation-cap"></i><input id="f-edu" type="text" placeholder="e.g. B.Sc. Computer Science, Stanford University, 2024" maxlength="150" /></div>
                 <div class="row-foot"><span></span><span class="cc"><span id="c-edu">0</span>/150</span></div>
               </div>
 
               <div class="fg full">
                 <label for="f-why">Why This Job? <span class="req">*</span></label>
-                <div class="inp-wrap ta-wrap"><i class="fas fa-heart ta-ico"></i>
-                  <textarea id="f-why" rows="3" placeholder="What excites you about this role and company? Be specific..." maxlength="600"></textarea>
-                </div>
+                <div class="inp-wrap ta-wrap"><i class="fas fa-heart ta-ico"></i><textarea id="f-why" rows="3" placeholder="What excites you about this role and company? Be specific..." maxlength="600"></textarea></div>
                 <div class="row-foot"><span class="err" id="e-why"></span><span class="cc"><span id="c-why">0</span>/600</span></div>
               </div>
 
               <div class="fg full">
                 <label for="f-extra">Additional Info</label>
-                <div class="inp-wrap ta-wrap"><i class="fas fa-plus-circle ta-ico"></i>
-                  <textarea id="f-extra" rows="2" placeholder="Certifications, awards, portfolio URL, languages spoken..." maxlength="400"></textarea>
-                </div>
+                <div class="inp-wrap ta-wrap"><i class="fas fa-plus-circle ta-ico"></i><textarea id="f-extra" rows="2" placeholder="Certifications, awards, portfolio URL, languages spoken..." maxlength="400"></textarea></div>
                 <div class="row-foot"><span></span><span class="cc"><span id="c-extra">0</span>/400</span></div>
               </div>
-
-            </div><!-- /form-grid -->
+            </div>
 
             <!-- ATS Meter -->
             <div class="ats-box glass-inner">
@@ -334,9 +624,9 @@
               <div class="spin" id="genSpin"></div>
             </button>
           </form>
-        </div><!-- /form-side -->
+        </div>
 
-        <!-- ── PREVIEW SIDE ── -->
+        <!-- Preview Side -->
         <div class="preview-side">
           <div class="preview-bar glass">
             <span class="preview-title"><i class="fas fa-eye"></i> Live Preview</span>
@@ -355,145 +645,507 @@
             </div>
             <div id="letterOut" class="letter-out"></div>
           </div>
-        </div><!-- /preview-side -->
 
-      </div><!-- /gen-layout -->
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       ABOUT
-  ══════════════════════════════════════ -->
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <span class="sec-tag">About LetterForge AI</span>
-          <h2 class="sec-title left">Made for the Modern Job Seeker</h2>
-          <p>Job hunting is stressful enough. Writing a cover letter shouldn't add to that. LetterForge AI was built by developers who've been through the grind — rejected applications, ATS black holes, and hours spent rewriting the same letter.</p>
-          <p>We built the tool we wished existed: fast, smart, private, and completely free.</p>
-          <ul class="about-list">
-            <li><i class="fas fa-check-circle"></i> Works for all industries and experience levels</li>
-            <li><i class="fas fa-check-circle"></i> No account or sign-up required</li>
-            <li><i class="fas fa-check-circle"></i> Data never leaves your browser</li>
-            <li><i class="fas fa-check-circle"></i> Unlimited generations, always free</li>
-          </ul>
-        </div>
-        <div class="about-stats reveal">
-          <div class="stat-grid glass">
-            <div class="stat-box"><span class="stat-big">80K+</span><span>Letters Created</span></div>
-            <div class="stat-box"><span class="stat-big">97%</span><span>ATS Pass Rate</span></div>
-            <div class="stat-box"><span class="stat-big">3</span><span>Pro Templates</span></div>
-            <div class="stat-box"><span class="stat-big">∞</span><span>Free Generations</span></div>
+          <!-- Recruiter Review Panel -->
+          <div class="recruiter-panel glass" id="recruiterPanel" style="display:none;">
+            <div class="recruiter-head">
+              <h4><i class="fas fa-user-tie"></i> AI Recruiter Review</h4>
+              <span class="recruiter-score" id="recScore"><span class="score-val">0</span>/100</span>
+            </div>
+            <div class="recruiter-verdict" id="recVerdict">
+              <span class="verdict-badge"><i class="fas fa-minus"></i> <span>Pending</span></span>
+            </div>
+            <div class="recruiter-breakdown" id="recBreakdown"></div>
+            <div class="recruiter-feedback" id="recFeedback"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       TESTIMONIALS
-  ══════════════════════════════════════ -->
-  <section class="reviews-section" id="reviews">
+  <!-- ════════════════════════════════════════════════════════════
+       JOB MATCH ANALYZER
+  ════════════════════════════════════════════════════════════ -->
+  <section class="match-section" id="match">
     <div class="container">
       <div class="sec-head">
-        <span class="sec-tag">Success Stories</span>
-        <h2 class="sec-title">Real People. Real Results.</h2>
-        <p class="sec-sub">Join thousands who landed interviews using LetterForge AI.</p>
+        <span class="sec-tag">Job Match Analyzer</span>
+        <h2 class="sec-title">Analyze Your Fit</h2>
+        <p class="sec-sub">Compare your resume skills against any job description</p>
       </div>
-      <div class="reviews-grid">
-        <div class="review-card glass reveal">
-          <div class="review-stars">★★★★★</div>
-          <p>"I applied to 12 companies in one afternoon using LetterForge. Got 5 interview calls within a week. The ATS score feature is genuinely useful — not just a gimmick."</p>
-          <div class="reviewer">
-            <img class="rev-photo" src="https://ui-avatars.com/api/?name=Aisha+Kamara&background=f97316&color=fff&size=80&bold=true&rounded=true" alt="Aisha Kamara" />
-            <div><strong>Aisha Kamara</strong><span>UX Designer @ Figma</span></div>
+
+      <div class="match-layout">
+        <div class="match-input glass">
+          <h4><i class="fas fa-file-user"></i> Your Resume Skills</h4>
+          <textarea id="matchResume" rows="6" placeholder="Paste your resume or list your skills (comma-separated)..."></textarea>
+        </div>
+        <div class="match-input glass">
+          <h4><i class="fas fa-file-job"></i> Job Description</h4>
+          <textarea id="matchJob" rows="6" placeholder="Paste the job description here..."></textarea>
+        </div>
+      </div>
+
+      <button class="btn-main match-analyze-btn" id="analyzeMatchBtn">
+        <i class="fas fa-search"></i> Analyze Match
+      </button>
+
+      <div class="match-results glass" id="matchResults" style="display:none;">
+        <div class="match-score-card">
+          <canvas id="matchRing" width="120" height="120"></canvas>
+          <div class="match-score-info">
+            <span class="match-big-score" id="matchScoreBig">0%</span>
+            <span class="match-label">Job Match Score</span>
           </div>
         </div>
-        <div class="review-card glass reveal">
-          <div class="review-stars">★★★★★</div>
-          <p>"As a career changer, I struggled to write letters that didn't sound generic. LetterForge helped me frame my transferable skills perfectly. Landed my first tech role!"</p>
-          <div class="reviewer">
-            <img class="rev-photo" src="https://ui-avatars.com/api/?name=Daniel+Lowe&background=6366f1&color=fff&size=80&bold=true&rounded=true" alt="Daniel Lowe" />
-            <div><strong>Daniel Lowe</strong><span>Software Engineer @ Shopify</span></div>
+        <div class="match-details">
+          <div class="match-section">
+            <h5><i class="fas fa-check-circle"></i> Matched Skills</h5>
+            <div class="skill-tags" id="matchedSkills"></div>
+          </div>
+          <div class="match-section">
+            <h5><i class="fas fa-times-circle"></i> Missing Skills</h5>
+            <div class="skill-tags missing" id="missingSkills"></div>
+          </div>
+          <div class="match-section full-width">
+            <h5><i class="fas fa-lightbulb"></i> Recommendations</h5>
+            <div id="matchRecommendations"></div>
           </div>
         </div>
-        <div class="review-card glass reveal">
-          <div class="review-stars">★★★★★</div>
-          <p>"Used this for my internship applications during college. The Corporate template looked so polished that my professor asked if I hired someone to write it. 10/10."</p>
-          <div class="reviewer">
-            <img class="rev-photo" src="https://ui-avatars.com/api/?name=Nina+Patel&background=10b981&color=fff&size=80&bold=true&rounded=true" alt="Nina Patel" />
-            <div><strong>Nina Patel</strong><span>Data Science Intern @ Netflix</span></div>
-          </div>
-        </div>
+        <canvas id="matchRadar" width="300" height="250"></canvas>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       FAQ
-  ══════════════════════════════════════ -->
-  <section class="faq-section" id="faq">
+  <!-- ════════════════════════════════════════════════════════════
+       INTERVIEW QUESTION GENERATOR
+  ════════════════════════════════════════════════════════════ -->
+  <section class="interview-section" id="interview">
     <div class="container">
       <div class="sec-head">
-        <span class="sec-tag">FAQ</span>
-        <h2 class="sec-title">Got Questions?</h2>
+        <span class="sec-tag">Interview Prep</span>
+        <h2 class="sec-title">Interview Question Generator</h2>
+        <p class="sec-sub">Get personalized interview questions based on your skills and target role</p>
       </div>
-      <div class="faq-wrap">
-        <div class="faq-card glass reveal">
-          <button class="faq-q"><span>Is LetterForge AI really free?</span><i class="fas fa-plus faq-ico"></i></button>
-          <div class="faq-a"><p>Yes — 100% free, unlimited generations, no sign-up, no credit card. We believe everyone deserves access to professional tools.</p></div>
+
+      <div class="interview-form glass">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="intRole">Target Role</label>
+            <input id="intRole" type="text" placeholder="e.g. Senior Frontend Developer" />
+          </div>
+          <div class="form-group">
+            <label for="intSkills">Your Skills</label>
+            <input id="intSkills" type="text" placeholder="e.g. React, TypeScript, Node.js" />
+          </div>
+          <div class="form-group">
+            <label for="intLevel">Experience Level</label>
+            <select id="intLevel">
+              <option value="junior">Junior (0-2 years)</option>
+              <option value="mid" selected>Mid-Level (2-5 years)</option>
+              <option value="senior">Senior (5-8 years)</option>
+              <option value="lead">Lead/Manager (8+ years)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="intCount">Question Count</label>
+            <select id="intCount">
+              <option value="15">15 Questions</option>
+              <option value="25" selected>25 Questions</option>
+              <option value="50">50 Questions</option>
+            </select>
+          </div>
         </div>
-        <div class="faq-card glass reveal">
-          <button class="faq-q"><span>How does the ATS score work?</span><i class="fas fa-plus faq-ico"></i></button>
-          <div class="faq-a"><p>The score checks six key factors: your name, job role, skills (2+ recommended), experience, education, and motivation. Each completed field adds to your score. A score above 80% means your letter is well-optimized.</p></div>
+
+        <button class="btn-main gen-interview-btn" id="genInterviewBtn">
+          <i class="fas fa-question-circle"></i> Generate Questions
+        </button>
+      </div>
+
+      <div class="interview-results glass" id="interviewResults" style="display:none;">
+        <div class="interview-header">
+          <h4><i class="fas fa-list-check"></i> Your Interview Questions</h4>
+          <button class="act-btn" id="downloadInterviewBtn"><i class="fas fa-download"></i> Download</button>
         </div>
-        <div class="faq-card glass reveal">
-          <button class="faq-q"><span>Is my personal data safe?</span><i class="fas fa-plus faq-ico"></i></button>
-          <div class="faq-a"><p>Completely. Everything runs in your browser using localStorage. No data is ever transmitted to any server. You can verify this by checking your browser's network tab.</p></div>
+        <div class="question-tabs">
+          <button class="tab-btn active" data-tab="technical">Technical</button>
+          <button class="tab-btn" data-tab="behavioral">Behavioral</button>
+          <button class="tab-btn" data-tab="hr">HR</button>
+          <button class="tab-btn" data-tab="scenario">Scenario</button>
         </div>
-        <div class="faq-card glass reveal">
-          <button class="faq-q"><span>Can I use this for internship applications?</span><i class="fas fa-plus faq-ico"></i></button>
-          <div class="faq-a"><p>Absolutely. LetterForge AI works for internships, entry-level roles, senior positions, and career changes across all industries.</p></div>
+        <div class="question-list" id="questionList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       CAREER COACH
+  ════════════════════════════════════════════════════════════ -->
+  <section class="career-section" id="career">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Career Coach</span>
+        <h2 class="sec-title">Your Career Roadmap</h2>
+        <p class="sec-sub">Get a personalized development plan</p>
+      </div>
+
+      <div class="career-form glass">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="careerSkills">Current Skills</label>
+            <input id="careerSkills" type="text" placeholder="List your current skills..." />
+          </div>
+          <div class="form-group">
+            <label for="careerTarget">Target Role</label>
+            <input id="careerTarget" type="text" placeholder="e.g. Senior Software Engineer" />
+          </div>
+          <div class="form-group">
+            <label for="careerYears">Years of Experience</label>
+            <input id="careerYears" type="number" min="0" max="30" value="3" />
+          </div>
         </div>
-        <div class="faq-card glass reveal">
-          <button class="faq-q"><span>How do I save as PDF?</span><i class="fas fa-plus faq-ico"></i></button>
-          <div class="faq-a"><p>Click the "PDF" button after generating your letter. A clean print window opens — in the print dialog, change the destination to "Save as PDF" and click Save.</p></div>
+
+        <button class="btn-main gen-career-btn" id="genCareerBtn">
+          <i class="fas fa-road"></i> Generate Roadmap
+        </button>
+      </div>
+
+      <div class="career-results" id="careerResults" style="display:none;">
+        <div class="roadmap-container glass">
+          <div class="roadmap-timeline" id="roadmapTimeline"></div>
         </div>
-        <div class="faq-card glass reveal">
-          <button class="faq-q"><span>Can I switch templates after generating?</span><i class="fas fa-plus faq-ico"></i></button>
-          <div class="faq-a"><p>Yes! Click any template option and the preview updates instantly without needing to regenerate.</p></div>
+        <div class="career-widgets">
+          <div class="career-widget glass">
+            <h5><i class="fas fa-graduation-cap"></i> Missing Skills</h5>
+            <div id="missingCareerSkills"></div>
+          </div>
+          <div class="career-widget glass">
+            <h5><i class="fas fa-certificate"></i> Recommended Certifications</h5>
+            <div id="recommendedCerts"></div>
+          </div>
+          <div class="career-widget glass">
+            <h5><i class="fas fa-dollar-sign"></i> Salary Range</h5>
+            <div id="salaryRange"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
+  <!-- ════════════════════════════════════════════════════════════
+       MESSAGE GENERATORS (Networking, Thank You, Salary)
+  ════════════════════════════════════════════════════════════ -->
+  <section class="messages-section" id="messages">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Message Templates</span>
+        <h2 class="sec-title">Professional Messages</h2>
+        <p class="sec-sub">Generate networking, thank you, and salary negotiation messages</p>
+      </div>
+
+      <div class="message-tabs glass">
+        <button class="tab-btn active" data-msg-tab="networking"><i class="fas fa-network-wired"></i> Networking</button>
+        <button class="tab-btn" data-msg-tab="thankyou"><i class="fas fa-envelope-open-text"></i> Thank You</button>
+        <button class="tab-btn" data-msg-tab="salary"><i class="fas fa-dollar-sign"></i> Salary</button>
+      </div>
+
+      <div class="message-content glass">
+        <div class="msg-panel active" id="msg-networking">
+          <h4>Networking Messages</h4>
+          <div class="msg-selector">
+            <button class="msg-type active" data-type="linkedinConnection">LinkedIn Connection</button>
+            <button class="msg-type" data-type="recruiterOutreach">Recruiter Outreach</button>
+            <button class="msg-type" data-type="hiringManager">Hiring Manager</button>
+            <button class="msg-type" data-type="referralRequest">Referral Request</button>
+          </div>
+          <div class="msg-form" id="msgFormNetworking">
+            <div class="form-group">
+              <label>Recipient Name</label>
+              <input id="msgRecruiterName" type="text" placeholder="e.g. Sarah Johnson" />
+            </div>
+            <div class="form-group">
+              <label>Company</label>
+              <input id="msgCompany" type="text" placeholder="e.g. Google" />
+            </div>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input id="msgYourName" type="text" placeholder="e.g. Alex Chen" />
+            </div>
+            <button class="btn-main gen-msg-btn" id="genNetworkBtn"><i class="fas fa-magic"></i> Generate</button>
+          </div>
+          <div class="msg-output" id="msgOutputNetworking" style="display:none;">
+            <textarea id="msgTextNetworking" rows="8" readonly></textarea>
+            <div class="msg-actions">
+              <button class="act-btn" onclick="copyMsg('msgTextNetworking')"><i class="fas fa-copy"></i> Copy</button>
+              <button class="act-btn" onclick="downloadMsg('msgTextNetworking', 'networking')"><i class="fas fa-download"></i> Download</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="msg-panel" id="msg-thankyou">
+          <h4>Thank You Emails</h4>
+          <div class="msg-selector">
+            <button class="msg-type active" data-type="postInterview">Post-Interview</button>
+            <button class="msg-type" data-type="recruiterThank">Recruiter Thank You</button>
+            <button class="msg-type" data-type="hrAppreciation">HR Appreciation</button>
+          </div>
+          <div class="msg-form" id="msgFormThankYou">
+            <div class="form-group">
+              <label>Interviewer Name</label>
+              <input id="thankInterviewer" type="text" placeholder="e.g. Michael Park" />
+            </div>
+            <div class="form-group">
+              <label>Position</label>
+              <input id="thankPosition" type="text" placeholder="e.g. Software Engineer" />
+            </div>
+            <div class="form-group">
+              <label>Company</label>
+              <input id="thankCompany" type="text" placeholder="e.g. Meta" />
+            </div>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input id="thankYourName" type="text" placeholder="e.g. Alex Chen" />
+            </div>
+            <button class="btn-main gen-msg-btn" id="genThankBtn"><i class="fas fa-magic"></i> Generate</button>
+          </div>
+          <div class="msg-output" id="msgOutputThankYou" style="display:none;">
+            <textarea id="msgTextThankYou" rows="10" readonly></textarea>
+            <div class="msg-actions">
+              <button class="act-btn" onclick="copyMsg('msgTextThankYou')"><i class="fas fa-copy"></i> Copy</button>
+              <button class="act-btn" onclick="downloadMsg('msgTextThankYou', 'thank-you')"><i class="fas fa-download"></i> Download</button>
+              <button class="act-btn primary-act" onclick="emailMsg('msgTextThankYou')"><i class="fas fa-envelope"></i> Open Email</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="msg-panel" id="msg-salary">
+          <h4>Salary Negotiation</h4>
+          <div class="msg-selector">
+            <button class="msg-type active" data-type="negotiation">Negotiation Email</button>
+            <button class="msg-type" data-type="counterOffer">Counter Offer</button>
+            <button class="msg-type" data-type="acceptance">Acceptance</button>
+            <button class="msg-type" data-type="rejection">Rejection</button>
+          </div>
+          <div class="msg-form" id="msgFormSalary">
+            <div class="form-group">
+              <label>HR Contact Name</label>
+              <input id="salaryHRName" type="text" placeholder="e.g. David Lee" />
+            </div>
+            <div class="form-group">
+              <label>Position</label>
+              <input id="salaryPosition" type="text" placeholder="e.g. Senior Developer" />
+            </div>
+            <div class="form-group">
+              <label>Company</label>
+              <input id="salaryCompany" type="text" placeholder="e.g. Amazon" />
+            </div>
+            <div class="form-group">
+              <label>Target Salary Range</label>
+              <input id="salaryTarget" type="text" placeholder="e.g. $180,000 - $200,000" />
+            </div>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input id="salaryYourName" type="text" placeholder="e.g. Alex Chen" />
+            </div>
+            <button class="btn-main gen-msg-btn" id="genSalaryBtn"><i class="fas fa-magic"></i> Generate</button>
+          </div>
+          <div class="msg-output" id="msgOutputSalary" style="display:none;">
+            <textarea id="msgTextSalary" rows="12" readonly></textarea>
+            <div class="msg-actions">
+              <button class="act-btn" onclick="copyMsg('msgTextSalary')"><i class="fas fa-copy"></i> Copy</button>
+              <button class="act-btn" onclick="downloadMsg('msgTextSalary', 'salary-negotiation')"><i class="fas fa-download"></i> Download</button>
+              <button class="act-btn primary-act" onclick="emailMsg('msgTextSalary')"><i class="fas fa-envelope"></i> Open Email</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       PROFILE ANALYZERS (LinkedIn & GitHub)
+  ════════════════════════════════════════════════════════════ -->
+  <section class="profile-section" id="profiles">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Profile Analyzers</span>
+        <h2 class="sec-title">Optimize Your Profiles</h2>
+        <p class="sec-sub">Analyze and improve your LinkedIn and GitHub profiles</p>
+      </div>
+
+      <div class="profile-grid">
+        <!-- LinkedIn Analyzer -->
+        <div class="profile-card glass">
+          <div class="profile-header">
+            <div class="profile-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+            <h4>LinkedIn Profile Analyzer</h4>
+          </div>
+          <div class="profile-form">
+            <div class="form-group">
+              <label>About Section</label>
+              <textarea id="linkedinAbout" rows="3" placeholder="Paste your LinkedIn About section..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Experience</label>
+              <textarea id="linkedinExperience" rows="3" placeholder="Paste your experience section..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Skills</label>
+              <input id="linkedinSkills" type="text" placeholder="e.g. Python, Machine Learning, AWS" />
+            </div>
+            <div class="form-group">
+              <label>Headline</label>
+              <input id="linkedinHeadline" type="text" placeholder="e.g. Software Engineer @ Google" />
+            </div>
+            <button class="btn-main" id="analyzeLinkedInBtn"><i class="fas fa-search"></i> Analyze Profile</button>
+          </div>
+          <div class="profile-results" id="linkedinResults" style="display:none;">
+            <div class="profile-score">
+              <span class="big-score" id="linkedinStrengthScore">0</span>
+              <span>Profile Strength</span>
+            </div>
+            <div class="profile-insights" id="linkedinInsights"></div>
+          </div>
+        </div>
+
+        <!-- GitHub Analyzer -->
+        <div class="profile-card glass">
+          <div class="profile-header">
+            <div class="profile-icon github"><i class="fab fa-github"></i></div>
+            <h4>GitHub Profile Analyzer</h4>
+          </div>
+          <div class="profile-form">
+            <div class="form-group">
+              <label>Repository Names</label>
+              <textarea id="githubRepos" rows="2" placeholder="List your main repositories (one per line)..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>README Content</label>
+              <textarea id="githubReadme" rows="3" placeholder="Paste a sample README from your best project..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Technologies Used</label>
+              <input id="githubTech" type="text" placeholder="e.g. React, Node.js, PostgreSQL, Docker" />
+            </div>
+            <button class="btn-main" id="analyzeGithubBtn"><i class="fas fa-search"></i> Analyze Profile</button>
+          </div>
+          <div class="profile-results" id="githubResults" style="display:none;">
+            <div class="profile-score">
+              <span class="big-score" id="githubPortfolioScore">0</span>
+              <span>Portfolio Score</span>
+            </div>
+            <div class="profile-insights" id="githubInsights"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SUCCESS PREDICTOR
+  ════════════════════════════════════════════════════════════ -->
+  <section class="success-section" id="success">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag">Success Predictor</span>
+        <h2 class="sec-title">Predict Your Success</h2>
+        <p class="sec-sub">Get a weighted analysis of your application success probability</p>
+      </div>
+
+      <div class="success-form glass">
+        <div class="success-inputs">
+          <div class="success-input">
+            <label>Resume Quality <span>(25%)</span></label>
+            <input type="range" id="successResume" min="0" max="100" value="50" />
+            <span class="range-val" id="successResumeVal">50</span>
+          </div>
+          <div class="success-input">
+            <label>Job Match Score <span>(25%)</span></label>
+            <input type="range" id="successMatch" min="0" max="100" value="50" />
+            <span class="range-val" id="successMatchVal">50</span>
+          </div>
+          <div class="success-input">
+            <label>Cover Letter Quality <span>(20%)</span></label>
+            <input type="range" id="successCover" min="0" max="100" value="50" />
+            <span class="range-val" id="successCoverVal">50</span>
+          </div>
+          <div class="success-input">
+            <label>ATS Score <span>(15%)</span></label>
+            <input type="range" id="successAts" min="0" max="100" value="50" />
+            <span class="range-val" id="successAtsVal">50</span>
+          </div>
+          <div class="success-input">
+            <label>Experience Match <span>(10%)</span></label>
+            <input type="range" id="successExp" min="0" max="100" value="50" />
+            <span class="range-val" id="successExpVal">50</span>
+          </div>
+          <div class="success-input">
+            <label>Skill Alignment <span>(5%)</span></label>
+            <input type="range" id="successSkill" min="0" max="100" value="50" />
+            <span class="range-val" id="successSkillVal">50</span>
+          </div>
+        </div>
+
+        <button class="btn-main" id="predictSuccessBtn"><i class="fas fa-magic"></i> Calculate Success Probability</button>
+      </div>
+
+      <div class="success-results glass" id="successResults" style="display:none;">
+        <div class="success-gauge-container">
+          <canvas id="successGauge" width="260" height="160"></canvas>
+        </div>
+        <div class="success-details">
+          <div class="success-kpis">
+            <div class="success-kpi">
+              <span class="kpi-value" id="successProb">0%</span>
+              <span class="kpi-label">Success Probability</span>
+            </div>
+            <div class="success-kpi">
+              <span class="kpi-value" id="successInterview">0%</span>
+              <span class="kpi-label">Interview Chance</span>
+            </div>
+            <div class="success-kpi">
+              <span class="kpi-value" id="successReadiness">--</span>
+              <span class="kpi-label">Readiness</span>
+            </div>
+          </div>
+          <div class="success-factors" id="successFactors"></div>
+          <div class="success-weaknesses" id="successWeaknesses"></div>
+          <div class="success-suggestions" id="successSuggestions"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
        FOOTER
-  ══════════════════════════════════════ -->
+  ════════════════════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
           <div class="logo"><div class="logo-icon"><i class="fas fa-feather-alt"></i></div><span>Letter<strong>Forge</strong> <em>AI</em></span></div>
-          <p>The smartest, fastest way to write cover letters that actually get you hired.</p>
+          <p>The smartest, fastest way to write cover letters and optimize your job applications. 100% offline, 100% free.</p>
           <div class="socials">
             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Product</h4><a href="#features">Features</a><a href="#generator">Generator</a><a href="#reviews">Reviews</a></div>
-        <div class="footer-col"><h4>Resources</h4><a href="#how-it-works">How It Works</a><a href="#faq">FAQ</a><a href="#about">About</a></div>
-        <div class="footer-col"><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Cookies</a></div>
+        <div class="footer-col"><h4>Features</h4><a href="#generator">Cover Letter Generator</a><a href="#interview">Interview Prep</a><a href="#match">Job Match</a><a href="#career">Career Coach</a></div>
+        <div class="footer-col"><h4>Tools</h4><a href="#profiles">Profile Analyzers</a><a href="#messages">Message Templates</a><a href="#success">Success Predictor</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 LetterForge AI. All rights reserved. Built with <i class="fas fa-heart"></i> for job seekers everywhere.</p>
+        <p>2026 LetterForge AI. All rights reserved. Built with <i class="fas fa-heart"></i> for job seekers everywhere. No APIs used — all processing is local.</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="data/skills.js"></script>
+  <script src="data/questions.js"></script>
+  <script src="data/templates.js"></script>
+  <script src="engine.js"></script>
+  <script src="index.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
